@@ -38,32 +38,8 @@
       }
     }
   {%- endstyle -%}
-   <script>
-  var elem = document.querySelector('.carousel.product__image-slider');
-  var flkty = new Flickity( elem, {
-    contain: true,
-    imagesLoaded: true,
-    lazyLoad: 1,
-    wrapAround: true,
-    pageDots: false,
-    {% if product.images.size < 2 %}
-    prevNextButtons: false,
-    {% endif %}
-    adaptiveHeight: true
-  });
-  var elemThumbnail = document.querySelector('.carousel.product__image-thumbnail');
-  var flktyB = new Flickity( elemThumbnail, {
-    asNavFor: '.carousel.product__image-slider',
-    contain: true,
-    imagesLoaded: true,
-    lazyLoad: 4,
-    pageDots: false,
-    prevNextButtons: false
-  });
-</script> 
-
-
   
+ 
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -745,6 +721,30 @@
     </script>
   </div>
 </product-info>
+
+ <script>
+  var elem = document.querySelector('.carousel.product__image-slider');
+  var flkty = new Flickity( elem, {
+    contain: true,
+    imagesLoaded: true,
+    lazyLoad: 1,
+    wrapAround: true,
+    pageDots: false,
+    {% if product.images.size < 2 %}
+    prevNextButtons: false,
+    {% endif %}
+    adaptiveHeight: true
+  });
+  var elemThumbnail = document.querySelector('.carousel.product__image-thumbnail');
+  var flktyB = new Flickity( elemThumbnail, {
+    asNavFor: '.carousel.product__image-slider',
+    contain: true,
+    imagesLoaded: true,
+    lazyLoad: 4,
+    pageDots: false,
+    prevNextButtons: false
+  });
+</script> 
 
 {% schema %}
 {
